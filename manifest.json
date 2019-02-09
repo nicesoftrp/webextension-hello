@@ -1,0 +1,28 @@
+{
+    "manifest_version":2,
+    "name": "Webextension Hello",
+    "description": "Test Webextension",
+    "version": "1.0",
+    "permissions": [
+        "webRequest",
+        "<all_urls>"
+    ],
+    "icons": {
+        "64": "icons/raf.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "browser-polyfill.js",
+                "hello.js"
+            ],
+            "matches": ["*://www.google.com/"]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "browser-polyfill.js",
+            "background.js"
+        ]
+    }
+}
